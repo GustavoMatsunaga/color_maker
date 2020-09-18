@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Maker</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Color Maker</h1>
+      <h2>Mix the red, green and blue to make your color! Even choose the opacity!</h2>
+    </div>
+    <div id="container">
+      <div class="card">
+        <div class="card-colors">
+          <label for="red">RED</label>
+          <input type="range" name="red" id="color-red" min="0" max="255" value="0">
+          <input type="text" readonly="readonly" class="text-color-red" value="0">
+        </div>
+        <div class="card-colors">
+          <label for="green">GREEN</label>
+          <input type="range" name="green" id="color-green" min="0" max="255" value="0">
+          <input type="text" readonly="readonly" class="text-color-green" value="0">
+        </div>
+        <div class="card-colors">
+          <label for="blue">BLUE</label>
+          <input type="range" name="blue" id="color-blue" min="0" max="255" value="0">
+          <input type="text" readonly="readonly" class="text-color-blue" value="0">
+        </div>
+        <div class="card-colors">
+          <label for="blue">OPACITY</label>
+          <input type="range" name="opacity" id="opacity" min="0" max="100" value="100">
+          <input type="text" readonly="readonly" class="text-opacity" value="100">
+        </div>
+      </div>
+      <div class="card-background">
+        <div class="card-background-color"></div>
+        <h2 class="card-background-text"></h2>
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
