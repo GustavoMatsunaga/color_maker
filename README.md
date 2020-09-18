@@ -36,12 +36,12 @@ These 3 values must be combined and generated a background color of a Div, show 
 
 ## Design
 
-![Design preview for the Color Maker](./design/desktop-preview.jpg)
+![Design preview for the Color Maker](./images/github/githubModel.png)
 
-## DESKTOP
+## Desktop
 
-![Gif preview for the desktop Color Mark](./design/github.gif)
+![Gif preview for the desktop Color Mark](./images/github/githubDesktop.gif)
 
-## MOBILE
+## Mobile
 
-![Gif preview for the mobile Color Mark](./design/github.gif)
+![Gif preview for the mobile Color Mark](./images/github/githubMobile.gif)
