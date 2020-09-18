@@ -32,7 +32,7 @@ These 3 values must be combined and generated a background color of a Div, show 
     <li>JAVASCRIPT</li>
 </ul>
 
-# Article component
+# Web Model
 
 ## Design
 
