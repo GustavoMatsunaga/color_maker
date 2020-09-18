@@ -6,7 +6,7 @@
 
 This website was created to make colors by just dragging the values that you want in the RGB section, made with Vanilla Javascript.
 </br>
-You can checkout the demo here : <strong><a href="https://gustavomatsunaga.github.io/ArticleComponent/">Color Maker</a></strong>
+You can checkout the demo here : <strong><a href="https://gustavomatsunaga.github.io/color_maker/">Color Maker</a></strong>
 
 ## Challenges! :pushpin:
 
