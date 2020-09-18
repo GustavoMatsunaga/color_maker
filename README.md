@@ -34,10 +34,6 @@ These 3 values must be combined and generated a background color of a Div, show 
 
 # Web Model
 
-## Design
-
-![Design preview for the Color Maker](./images/github/githubModel.png)
-
 ## Desktop
 
 ![Gif preview for the desktop Color Mark](./images/github/githubDesktop.gif)
