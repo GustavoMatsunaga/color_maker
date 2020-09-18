@@ -39,5 +39,8 @@ These 3 values must be combined and generated a background color of a Div, show 
 ![Gif preview for the desktop Color Mark](./images/github/githubDesktop.gif)
 
 ## Mobile
+<div style="width:50%">
 
 ![Gif preview for the mobile Color Mark](./images/github/githubMobile.gif)
+
+</div>
