@@ -21,6 +21,7 @@ var colorBackground = document.querySelector(".card-background-color")
 var textBackground = document.querySelector(".card-background-text")
 var textBackgroundHex = document.querySelector("#hex")
 
+// Event listener for the input ranges
 redColor.addEventListener("change", eventColorChange);
 greenColor.addEventListener("change", eventColorChange);
 blueColor.addEventListener("change", eventColorChange);
@@ -44,11 +45,12 @@ function eventColorChange(){
 
     // Changing the text background using template literals
     textBackgroundHex.textContent = rgba2hex(rgba)
-
 }
-})
+
 
 function rgba2hex(orig) {
+  // Function to transform RGBA to HEX
+
   var a, isPercent,
     rgb = orig.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i),
     alpha = (rgb && rgb[4] || "").trim(),
@@ -68,3 +70,4 @@ function rgba2hex(orig) {
 
   return hex;
 }
+})
