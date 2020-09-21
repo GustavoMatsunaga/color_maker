@@ -40,4 +40,4 @@ These 3 values must be combined and generated a background color of a Div, show 
 
 ## Mobile
 
-<img src="images/github/githubMobile.gif" style="width:50%" >
+<img src="images/github/githubMobile.gif" width="250" height="350" >
