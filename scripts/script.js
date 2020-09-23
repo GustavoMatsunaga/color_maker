@@ -22,10 +22,10 @@ var textBackground = document.querySelector(".card-background-text")
 var textBackgroundHex = document.querySelector("#hex")
 
 // Event listener for the input ranges
-redColor.addEventListener("change", eventColorChange);
-greenColor.addEventListener("change", eventColorChange);
-blueColor.addEventListener("change", eventColorChange);
-opacity.addEventListener("change", eventColorChange);
+redColor.addEventListener("input", eventColorChange);
+greenColor.addEventListener("input", eventColorChange);
+blueColor.addEventListener("input", eventColorChange);
+opacity.addEventListener("input", eventColorChange);
 
 function eventColorChange(){
     // Adding the values to the input text
