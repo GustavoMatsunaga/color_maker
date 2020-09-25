@@ -2,49 +2,49 @@
 window.addEventListener("load", () => {
 
 // Colors from Range Inputs
-
-var redColor = document.querySelector("#color-red")
-var greenColor = document.querySelector("#color-green")
-var blueColor = document.querySelector("#color-blue")
-var opacity = document.querySelector("#opacity")
+var color = colorsGet();
 
 // Text for colors
 
-var redText = document.querySelector(".text-color-red")
-var greenText = document.querySelector(".text-color-green")
-var blueText = document.querySelector(".text-color-blue")
-var opacityText = document.querySelector(".text-opacity")
+var textColor = textColorsGet();
 
 // Background color
 
-var colorBackground = document.querySelector(".card-background-color")
-var textBackground = document.querySelector(".card-background-text")
-var textBackgroundHex = document.querySelector("#hex")
+var background = backgroundGet();
 
 // Event listener for the input ranges
-redColor.addEventListener("input", eventColorChange);
-greenColor.addEventListener("input", eventColorChange);
-blueColor.addEventListener("input", eventColorChange);
-opacity.addEventListener("input", eventColorChange);
+color.red.addEventListener("input", eventColorChange);
+color.green.addEventListener("input", eventColorChange);
+color.blue.addEventListener("input", eventColorChange);
+color.opacity.addEventListener("input", eventColorChange);
+
+
 
 function eventColorChange(){
     // Adding the values to the input text
-    redText.value = redColor.value
-    greenText.value = greenColor.value
-    blueText.value = blueColor.value
-    opacityText.value = opacity.value;
+    textColor.red.value = color.red.value
+    textColor.green.value = color.green.value
+    textColor.blue.value = color.blue.value
+    textColor.opacity.value = color.opacity.value;
 
     // Var RGBA in a variable
-    var rgba = `rgba(${redColor.value}, ${greenColor.value}, ${blueColor.value}, ${opacity.value/100})`;
+    var rgba = `rgba(${color.red.value}, ${color.green.value}, ${color.blue.value}, ${color.opacity.value/100})`;
     
     // Changing the background using template literals
-    colorBackground.style.backgroundColor = rgba;
+    background.main.style.backgroundColor = rgba;
 
     // Changing the text background using template literals
-    textBackground.textContent = rgba
+    background.text.textContent = rgba
 
     // Changing the text background using template literals
-    textBackgroundHex.textContent = rgba2hex(rgba)
+    background.hex.textContent = rgba2hex(rgba);
+
+    // Changing the slider background
+    var sliderColor = changeSlider(color);
+    color.red.style.background = sliderColor.red;
+    color.green.style.background = sliderColor.green;
+    color.blue.style.background = sliderColor.blue;
+    color.opacity.style.background = sliderColor.opacity;
 }
 
 
@@ -71,3 +71,48 @@ function rgba2hex(orig) {
   return hex;
 }
 })
+
+function changeSlider (color) {
+  var sliderColor = {
+
+    red: `linear-gradient(90deg, rgb(128, 128, 128) 0%, rgba(${color.red.value}, 0, 0, ${color.opacity.value/100}) ${(color.red.value*100)/255}%, rgb(128, 128, 128) ${(color.red.value*100)/255}%, rgb(128, 128, 128)100%)`,
+
+    green: `linear-gradient(90deg, rgb(128, 128, 128) 0%, rgba(0, ${color.green.value}, 0, ${color.opacity.value/100}) ${(color.green.value*100)/255}%, rgb(128, 128, 128) ${(color.green.value*100)/255}%, rgb(128, 128, 128)100%)`,
+
+    blue: `linear-gradient(90deg, rgb(128, 128, 128) 0%, rgba(0, 0, ${color.blue.value}, ${color.opacity.value/100}) ${(color.blue.value*100)/255}%, rgb(128, 128, 128) ${(color.blue.value*100)/255}%, rgb(128, 128, 128)100%)`,
+
+    opacity: `linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, ${color.opacity.value/100}) ${color.opacity.value}%, rgba(0, 0, 0, ${color.opacity.value/100}) ${color.opacity.value}%, rgb(128, 128, 128)100%)`
+
+  }
+  return sliderColor;
+}
+
+
+function colorsGet () {
+  var color = {
+    red: document.querySelector("#color-red"),
+    green: document.querySelector("#color-green"),
+    blue: document.querySelector("#color-blue"),
+    opacity: document.querySelector("#opacity")
+  }
+  return color;
+}
+
+function textColorsGet () {
+  var textColor = {
+    red : document.querySelector(".text-color-red"),
+    green : document.querySelector(".text-color-green"),
+    blue : document.querySelector(".text-color-blue"),
+    opacity : document.querySelector(".text-opacity")
+  }
+  return textColor ;
+}
+
+function backgroundGet () {
+  var background = {
+    main : document.querySelector(".card-background-color"),
+    text : document.querySelector(".card-background-text"),
+    hex : textBackgroundHex = document.querySelector("#hex")
+  }
+  return background ;
+}
